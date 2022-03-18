@@ -1,29 +1,41 @@
-#include "main.h"
-#include <stdlib.h>
+#include "holberton.h"
 
 /**
- * more_numbers - a function print a number.
- *
+ * more_numbers - check the code for Holberton School students.
+ * Return: void .
  */
-
 void more_numbers(void)
 {
-	int i, k;
+int count, i, changer, id;
+count = 0;
+id = 0;
+while (count < 10)
+{
+i = 0;
+for (i = 0; i <= 14; i++)
+{
+changer = i;
+if (i < 10)
+{
+changer = i;
+}
+else
+{
+changer = 1;
+}
+_putchar(changer + '0');
+if (i > 9)
+{
+_putchar(id + '0');
+id++;
+}
+}
 
-	for (k = 1; k <= 10; k++)
-	{
-		/* Execution du code print_most_number */
-
-		for (i = 0; i <= 14; i++)
-		{
-			if (i <= 9)
-				_putchar(i + '0');
-			else
-			{
-				_putchar(i / 10 + '0');
-				_putchar(i % 10 + '0');
-			}
-		}
-		system("echo \"\"");
-	}
+_putchar('\n');
+if (i == 15)
+{
+id = 0;
+}
+count++;
+}
 }
