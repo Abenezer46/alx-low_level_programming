@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
  * print_square - check the code for Holberton School students.
@@ -7,8 +7,8 @@
  */
 void print_square(int size)
 {
-int count1, count2;
-count1 = 0;
+int count1 = 0;
+int count2;
 
 if (size > 0)
 {
