@@ -10,7 +10,8 @@ int main(void)
 int i, j, isPrime;
 long int num;
 /* Input a number from user */
- num = 612852475143;
+num = 612852475143;
+printf("All Prime Factors of %ld are: \n", num);
 /* Find all Prime factors */
 for (i = 2; i <= num; i++)
 {
