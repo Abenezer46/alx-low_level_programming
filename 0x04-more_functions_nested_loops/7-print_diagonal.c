@@ -1,31 +1,30 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
- * print_diagonal - a function print a number.
- * @n : the number
- *
+ * print_diagonal - check for a digit
+ * @n : number of \\ to be printed
+ * Return:void
  */
 
 void print_diagonal(int n)
 {
-	int i = 0, k = 0;
 
-	if (n > 0)
+	int i = 0, ii;
+
+	while (i < n && n > 0)
 	{
-		while (k < n)
+		ii = 0;
+		while (ii < i)
 		{
-			while (i < k)
-			{
-				_putchar(' ');
-				i++;
-			}
-			_putchar('\\');
-			_putchar('\n');
-			i = 0;
-			k++;
+			_putchar(' ');
+			ii++;
 		}
-	}
-	else
+
+		_putchar('\\');
 		_putchar('\n');
+		i++;
+	}
+	if (i == 0)
+		_putchar('\n');
+
 }

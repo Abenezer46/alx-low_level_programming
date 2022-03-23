@@ -1,31 +1,29 @@
 #include "main.h"
 
 /**
- * print_square - check the code for Holberton School students.
- *@size: variable
- * Return: Always 0.
+ * print_square - check for a digit
+ * @n : number of _ to be printed
+ * Return:void
  */
-void print_square(int size)
-{
-int count1 = 0;
-int count2;
 
-if (size > 0)
+void print_square(int n)
 {
-while (count1 < size)
-{
-count2 = 0;
-while (count2 < size)
-{
-_putchar('#');
-count2++;
-}
-_putchar('\n');
-count1++;
-}
-}
-else
-{
-_putchar('\n');
-}
+
+	int i = 0, ii;
+
+	while (i < n && n > 0)
+	{
+		ii = 0;
+		while (ii < n)
+		{
+			_putchar('#');
+			ii++;
+		}
+
+		_putchar('\n');
+		i++;
+	}
+	if (i == 0)
+		_putchar('\n');
+
 }

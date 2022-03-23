@@ -1,39 +1,32 @@
 #include <stdio.h>
-#include "main.h"
 /**
- * main - Entry pont
- * Return: Always 0.
+ *main - largest prime facter of 612852475143.
+ *
+ *Return: 0
  */
-
 int main(void)
 {
-int i, j, isPrime;
-long int num;
-/* Input a number from user */
-num = 612852475143;
-printf("All Prime Factors of %ld are: \n", num);
-/* Find all Prime factors */
-for (i = 2; i <= num; i++)
-{
-/* Check 'i' for factor of num */
-if (num % i == 0)
-{
-/* Check 'i' for Prime */
-isPrime = 1;
-for (j = 2; j <= i / 2; j++)
-{
-if (i % j == 0)
-{
-isPrime = 0;
-break;
-}
-}
-/* If 'i' is Prime number and factor of num */
-if (isPrime == 1)
-{
-printf("%d, ", i);
-}
-}
-}
-return (0);
+	long int x, i, pf;
+
+	pf = -1;
+	x = 612852475143;
+
+	while (x % 2 == 0)
+	{
+		pf = 2;
+		x = x / 2;
+	}
+	for (i = 3; i <= x / 2; i = i + 2)
+	{
+		while (x % i == 0)
+		{
+			pf = i;
+			x = x / i;
+		}
+	}
+	if (x > 2)
+		pf = x;
+
+	printf("%ld\n", pf);
+	return (0);
 }
