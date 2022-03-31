@@ -1,30 +1,22 @@
-/*****************************************************************************/
-/*                                                                           */
-/*                                               _____  ______    ____  ___  */
-/* 0-memset.c                                   /  _  \ |    |    \   \/  /  */
-/*                                             /  /_\  \|    |     \     /   */
-/* By: Barahmou   <hamabarhamou@gmail.com>    /    |    \    |___  /     \   */
-/*                                            \____|__  /_______ \/___/\  \  */
-/* Created: 2022-03-28 09:44:03   $Barahmou           \/        \/      \_/  */
-/* Updated: 2022-03-28 09:44:03 by Barahmou                                  */
-/*                                                                           */
-/*****************************************************************************/
+#include "main.h"
 
 /**
- * _memcpy - a function ...
- * @dest: the chaine
- * @src: the char
- * @n: the int
- *
- * Return: 1 or 0
+ * *_memcpy -  copies memory area from src to dest
+ * @dest: destination
+ * @src: source
+ * @n: max bytes to use
+ * Return: dest
  */
+
 
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int i = 0;
+	unsigned int i;
 
-	for (i = 0; i < n; i++)
+	for (i = 0; n > 0 ; i++, n--)
+	{
 		dest[i] = src[i];
+	}
+
 	return (dest);
 }
-

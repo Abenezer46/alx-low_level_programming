@@ -1,50 +1,33 @@
-/*****************************************************************************/
-/*                                                                           */
-/*                                               _____  ______    ____  ___  */
-/* 0-memset.c                                   /  _  \ |    |    \   \/  /  */
-/*                                             /  /_\  \|    |     \     /   */
-/* By: Barahmou   <hamabarhamou@gmail.com>    /    |    \    |___  /     \   */
-/*                                            \____|__  /_______ \/___/\  \  */
-/* Created: 2022-03-28 09:44:03   $Barahmou           \/        \/      \_/  */
-/* Updated: 2022-03-28 09:44:03 by Barahmou                                  */
-/*                                                                           */
-/*****************************************************************************/
-
-#include <string.h>
-
+#include "main.h"
 /**
- * _strstr - a function ...
- * @haystack: the chaine
- * @needle: the chaine
- *
- * Return: 1 or 0
- */
-
+  *_strstr - locates a substring.
+  *finds first occurence of the substring needle in
+  *haystack.
+  *@haystack: pointer to string.
+  *@needle: pointer to substring.
+  *
+  *Return: pointer to beginning of located string
+  *or NULL if substring isnt located.
+  */
 char *_strstr(char *haystack, char *needle)
 {
-	int index;
-
-	if (*needle == 0)
-		return (haystack);
-
 	while (*haystack)
 	{
-		index = 0;
+		char *start = haystack;
+		char *needlestr = needle;
 
-		if (haystack[index] == needle[index])
+		while (*needlestr && *haystack && *haystack == *needlestr)
 		{
-			do {
-				if (needle[index + 1] == '\0')
-					return (haystack);
-
-				index++;
-
-			} while (haystack[index] == needle[index]);
+			haystack++;
+			needlestr++;
 		}
 
-		haystack++;
+		if (!*needlestr)
+		{
+			return (start);
+		}
+
+		haystack = start + 1;
 	}
-
-	return ('\0');
+	return (0);
 }
-

@@ -1,30 +1,21 @@
-/*****************************************************************************/
-/*                                                                           */
-/*                                               _____  ______    ____  ___  */
-/* 0-memset.c                                   /  _  \ |    |    \   \/  /  */
-/*                                             /  /_\  \|    |     \     /   */
-/* By: Barahmou   <hamabarhamou@gmail.com>    /    |    \    |___  /     \   */
-/*                                            \____|__  /_______ \/___/\  \  */
-/* Created: 2022-03-28 09:44:03   $Barahmou           \/        \/      \_/  */
-/* Updated: 2022-03-28 09:44:03 by Barahmou                                  */
-/*                                                                           */
-/*****************************************************************************/
+#include "main.h"
 
 /**
- * _memset - a function ...
- * @s: the chaine
- * @b: the char
- * @n: the int
- *
- * Return: 1 or 0
+ * *_memset - fills memory with a constant byte.
+ * @s: pointer to put the constant
+ * @b: constant
+ * @n: max bytes to use
+ * Return: s
  */
 
 char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int i = 0;
+	unsigned int i;
 
-	for (i = 0; i < n; i++)
+	for (i = 0; n > 0; i++, n--)
+	{
 		s[i] = b;
+	}
+
 	return (s);
 }
-
